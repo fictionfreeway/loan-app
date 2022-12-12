@@ -1,0 +1,9 @@
+.contact-list {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    padding: 4rem 1.5rem;
+}
+
+.contact-list li {
+    list-style-type: none;
+}
