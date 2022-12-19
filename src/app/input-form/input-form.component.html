@@ -1,0 +1,34 @@
+<div fxLayout="row wrap" fxLayoutGap="20px">
+  <div class="grade-form" fxFlex>
+    <mat-card class="mat-elevation-z8">
+
+      <mat-card-title style="text-align: center;">Loan Details</mat-card-title>
+      <br>
+      <mat-card-content>
+        <form fxLayout="column" fxLayoutGap="16px" [formGroup]="loanForm" (ngSubmit)="onSubmit($event); calculate(); loanForm.reset();">
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Principal Amount</mat-label>
+            <input type="text" name="principal" required id="principal" matInput formControlName="principal">
+          </mat-form-field>
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Interest Rate per Year</mat-label>
+            <input type="text" name="rate" required id="rate" matInput formControlName="rate">
+          </mat-form-field>
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Length of Loan in Years</mat-label>
+            <input type="text" name="years" required id="years" matInput formControlName="years">
+          </mat-form-field>
+          <button type="submit" [disabled]="!loanForm.valid" mat-raised-button>Calculate</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="grade-form" fxFlex>
+    <mat-card class="mat-elevation-z8">
+      <mat-card-title style="text-align: center;">Your Monthly Payment</mat-card-title>
+      <br><br><br>
+      <h2 style="text-align: center">{{ monthlyPayment }}</h2>
+    </mat-card>
+  </div>
+</div>
+<br><br>

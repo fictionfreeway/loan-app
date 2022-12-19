@@ -1,25 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { InputFormComponent } from './input-form/input-form.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: BaseLayoutComponent,
+    component: HomeComponent,
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: InputFormComponent
       }
     ]
   },
   {
     path: 'about',
-    component: BaseLayoutComponent,
+    component: HomeComponent,
     children: [
       {
         path: '',
@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'contact',
-    component: BaseLayoutComponent,
+    component: HomeComponent,
     children: [
       {
         path: '',
